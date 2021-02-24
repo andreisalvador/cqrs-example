@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cqrs.Example.Infrastructure
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cqrs.Example.ConsoleApp", "..\src\Cqrs.Example.ConsoleApp\Cqrs.Example.ConsoleApp.csproj", "{3527152F-8816-478C-B840-E96D2E1F0B68}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cqrs.Example.Domain", "..\src\Cqrs.Example.Domain\Cqrs.Example.Domain.csproj", "{0A00FECA-FE5D-4805-86CE-3ABDE4674F01}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cqrs.Example.Application", "..\src\Cqrs.Example.Application\Cqrs.Example.Application.csproj", "{31F054B2-D6FA-405D-ABF4-651412B9A058}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +37,14 @@ Global
 		{3527152F-8816-478C-B840-E96D2E1F0B68}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3527152F-8816-478C-B840-E96D2E1F0B68}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3527152F-8816-478C-B840-E96D2E1F0B68}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0A00FECA-FE5D-4805-86CE-3ABDE4674F01}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A00FECA-FE5D-4805-86CE-3ABDE4674F01}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A00FECA-FE5D-4805-86CE-3ABDE4674F01}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A00FECA-FE5D-4805-86CE-3ABDE4674F01}.Release|Any CPU.Build.0 = Release|Any CPU
+		{31F054B2-D6FA-405D-ABF4-651412B9A058}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31F054B2-D6FA-405D-ABF4-651412B9A058}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31F054B2-D6FA-405D-ABF4-651412B9A058}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31F054B2-D6FA-405D-ABF4-651412B9A058}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
