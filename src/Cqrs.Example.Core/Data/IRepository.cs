@@ -1,7 +1,8 @@
 ﻿using NetDevPack.Domain;
 using System;
 using System.Collections.Generic;
-using System.Text;
+using System.Linq.Expressions;
+using System.Threading.Tasks;
 
 namespace Cqrs.Example.Core.Data
 {
@@ -9,7 +10,8 @@ namespace Cqrs.Example.Core.Data
     {
         void Add(TEntity entity);
         void Remove(TEntity entity);
-        TEntity GetById(Guid id);
-        void Commit();
+        Task<TEntity> GetById(Guid id);
+        Task<IEnumerable<TEntity>> GetWhere(Expression<Func<TEntity, bool>> predicate);
+        Task<bool> Commit();
     }
 }

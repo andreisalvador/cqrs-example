@@ -2,9 +2,6 @@
 using FluentValidation.Results;
 using MediatR;
 using NetDevPack.Messaging;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Cqrs.Example.Core.Messaging

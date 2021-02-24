@@ -1,9 +1,18 @@
-﻿using Cqrs.Example.Core.Data;
+﻿using Cqrs.Example.Application.Commands;
+using Cqrs.Example.Application.Handlers;
+using Cqrs.Example.Application.Queries;
+using Cqrs.Example.Application.Queries.DTOs;
+using Cqrs.Example.Core.Data;
+using Cqrs.Example.Core.Messaging;
+using Cqrs.Example.Core.Messaging.Interfaces;
 using Cqrs.Example.Domain;
+using Cqrs.Example.Infrastructure.Data;
 using Cqrs.Example.Infrastructure.Data.Repositories;
-using Microsoft.Extensions.DependencyInjection;
-using System;
+using FluentValidation.Results;
 using MediatR;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using System.Collections.Generic;
 using System.Reflection;
 
 namespace Cqrs.Example.Infrastructure.Ioc
@@ -12,6 +21,7 @@ namespace Cqrs.Example.Infrastructure.Ioc
     {
         public static void ResolveDependencies(this IServiceCollection services, Assembly applicationAssembly)
         {
+            services.AddLogging();
             AddDbContext(services);
             AddRepositories(services);
             AddMessaging(services, applicationAssembly);
@@ -25,12 +35,15 @@ namespace Cqrs.Example.Infrastructure.Ioc
         private static void AddMessaging(IServiceCollection services, Assembly applicationAssembly)
         {
             services.AddMediatR(applicationAssembly);
-            services.AddSingleton<IMediator, Mediator>();
+            services.AddSingleton<IBus, Bus>();
+            services.AddTransient<IRequestHandler<AdicionarUsuarioCommand, ValidationResult>, UsuarioCommandHandler>();
+            services.AddTransient<IRequestHandler<RemoverUsuarioCommand, ValidationResult>, UsuarioCommandHandler>();
+            services.AddTransient<IRequestHandler<ObterUsuariosAtivoPorNomeIdade, IEnumerable<UsuarioDto>>, UsuarioQueryHandler>();
         }
 
         private static void AddDbContext(IServiceCollection services)
         {
-            throw new NotImplementedException();
+            services.AddDbContext<CqrsExampleContext>(options => options.UseNpgsql("User ID = andrei.salvador;Password=pgpass;Server=localhost;Port=5433;Database=TimeNotesDb;Integrated Security=true;Pooling=true"));
         }
     }
 }

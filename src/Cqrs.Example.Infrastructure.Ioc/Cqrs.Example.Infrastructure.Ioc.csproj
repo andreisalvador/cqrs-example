@@ -1,15 +1,17 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="9.0.0" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="5.0.0" />
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="5.0.2" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Cqrs.Example.Application\Cqrs.Example.Application.csproj" />
     <ProjectReference Include="..\Cqrs.Example.Core\Cqrs.Example.Core.csproj" />
     <ProjectReference Include="..\Cqrs.Example.Domain\Cqrs.Example.Domain.csproj" />
     <ProjectReference Include="..\Cqrs.Example.Infrastructure.Data\Cqrs.Example.Infrastructure.Data.csproj" />
