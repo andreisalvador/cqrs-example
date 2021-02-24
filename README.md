@@ -1,7 +1,7 @@
 # CQRS
 
-### Nome
-Nome que é sigla para "Command Query Responsibility Segregation" foi adotado por Greg Young em 2010, porém o conceito já existia a muito tempo.
+### História
+CQRS é um padrão muito simples que permite muitas oportunidades de arquitetura que, de outra forma, poderiam não existir. O nome é uma sigla para "Command Query Responsibility Segregation" foi adotado por Greg Young em 2010, porém o conceito já existia a muito tempo.
 
 
 ### Conceito básico
