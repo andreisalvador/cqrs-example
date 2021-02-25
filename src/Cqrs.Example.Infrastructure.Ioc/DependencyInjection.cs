@@ -12,6 +12,7 @@ using FluentValidation.Results;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
 using System.Collections.Generic;
 using System.Reflection;
 
@@ -21,7 +22,7 @@ namespace Cqrs.Example.Infrastructure.Ioc
     {
         public static void ResolveDependencies(this IServiceCollection services, Assembly applicationAssembly)
         {
-            services.AddLogging();
+            services.AddLogging(x => x.AddConsole());
             AddDbContext(services);
             AddRepositories(services);
             AddMessaging(services, applicationAssembly);
@@ -29,21 +30,21 @@ namespace Cqrs.Example.Infrastructure.Ioc
 
         private static void AddRepositories(IServiceCollection services)
         {
-            services.AddTransient<IRepository<Usuario>, UsuarioRepository>();
+            services.AddScoped<IRepository<Usuario>, UsuarioRepository>();
         }
 
         private static void AddMessaging(IServiceCollection services, Assembly applicationAssembly)
         {
             services.AddMediatR(applicationAssembly);
-            services.AddSingleton<IBus, Bus>();
-            services.AddTransient<IRequestHandler<AdicionarUsuarioCommand, ValidationResult>, UsuarioCommandHandler>();
-            services.AddTransient<IRequestHandler<RemoverUsuarioCommand, ValidationResult>, UsuarioCommandHandler>();
-            services.AddTransient<IRequestHandler<ObterUsuariosAtivosPorNomeIdadeQuery, IEnumerable<UsuarioDto>>, UsuarioQueryHandler>();
+            services.AddScoped<IBus, Bus>();
+            services.AddScoped<IRequestHandler<AdicionarUsuarioCommand, ValidationResult>, UsuarioCommandHandler>();
+            services.AddScoped<IRequestHandler<RemoverUsuarioCommand, ValidationResult>, UsuarioCommandHandler>();
+            services.AddScoped<IRequestHandler<ObterUsuariosAtivosPorNomeIdadeQuery, IEnumerable<UsuarioDto>>, UsuarioQueryHandler>();
         }
 
         private static void AddDbContext(IServiceCollection services)
-        {
-            services.AddDbContext<CqrsExampleContext>(options => options.UseNpgsql("User ID = andrei.salvador;Password=pgpass;Server=localhost;Port=5433;Database=TimeNotesDb;Integrated Security=true;Pooling=true"));
+        {            
+            services.AddDbContext<CqrsExampleContext>(options => options.UseNpgsql("User ID = andrei.salvador;Password=pgpass;Server=localhost;Port=5433;Database=CQRS_DB;Integrated Security=true;Pooling=true"));
         }
     }
 }

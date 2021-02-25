@@ -3,17 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29102.190
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cqrs.Example.Core", "..\src\Cqrs.Example.Core\Cqrs.Example.Core.csproj", "{7AC9CE8A-91CC-4D09-890E-A86C233507FB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cqrs.Example.Core", "..\src\Cqrs.Example.Core\Cqrs.Example.Core.csproj", "{7AC9CE8A-91CC-4D09-890E-A86C233507FB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cqrs.Example.Infrastructure.Data", "..\src\Cqrs.Example.Infrastructure.Data\Cqrs.Example.Infrastructure.Data.csproj", "{0DD2DBC1-5F48-4C6B-972B-7A0BDA5B142F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cqrs.Example.Infrastructure.Data", "..\src\Cqrs.Example.Infrastructure.Data\Cqrs.Example.Infrastructure.Data.csproj", "{0DD2DBC1-5F48-4C6B-972B-7A0BDA5B142F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cqrs.Example.Infrastructure.Ioc", "..\src\Cqrs.Example.Infrastructure.Ioc\Cqrs.Example.Infrastructure.Ioc.csproj", "{B44107D1-2894-4C27-976E-3B6BFE67653E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cqrs.Example.Infrastructure.Ioc", "..\src\Cqrs.Example.Infrastructure.Ioc\Cqrs.Example.Infrastructure.Ioc.csproj", "{B44107D1-2894-4C27-976E-3B6BFE67653E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cqrs.Example.ConsoleApp", "..\src\Cqrs.Example.ConsoleApp\Cqrs.Example.ConsoleApp.csproj", "{3527152F-8816-478C-B840-E96D2E1F0B68}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cqrs.Example.Domain", "..\src\Cqrs.Example.Domain\Cqrs.Example.Domain.csproj", "{0A00FECA-FE5D-4805-86CE-3ABDE4674F01}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cqrs.Example.Domain", "..\src\Cqrs.Example.Domain\Cqrs.Example.Domain.csproj", "{0A00FECA-FE5D-4805-86CE-3ABDE4674F01}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cqrs.Example.Application", "..\src\Cqrs.Example.Application\Cqrs.Example.Application.csproj", "{31F054B2-D6FA-405D-ABF4-651412B9A058}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cqrs.Example.Application", "..\src\Cqrs.Example.Application\Cqrs.Example.Application.csproj", "{31F054B2-D6FA-405D-ABF4-651412B9A058}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cqrs.Example.WebApp", "..\src\Cqrs.Example.WebApp\Cqrs.Example.WebApp.csproj", "{C63D7B69-D3F9-4FB1-B1A5-BCD5725A6A76}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,10 +33,6 @@ Global
 		{B44107D1-2894-4C27-976E-3B6BFE67653E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B44107D1-2894-4C27-976E-3B6BFE67653E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B44107D1-2894-4C27-976E-3B6BFE67653E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3527152F-8816-478C-B840-E96D2E1F0B68}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3527152F-8816-478C-B840-E96D2E1F0B68}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3527152F-8816-478C-B840-E96D2E1F0B68}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3527152F-8816-478C-B840-E96D2E1F0B68}.Release|Any CPU.Build.0 = Release|Any CPU
 		{0A00FECA-FE5D-4805-86CE-3ABDE4674F01}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{0A00FECA-FE5D-4805-86CE-3ABDE4674F01}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0A00FECA-FE5D-4805-86CE-3ABDE4674F01}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -45,6 +41,10 @@ Global
 		{31F054B2-D6FA-405D-ABF4-651412B9A058}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{31F054B2-D6FA-405D-ABF4-651412B9A058}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{31F054B2-D6FA-405D-ABF4-651412B9A058}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C63D7B69-D3F9-4FB1-B1A5-BCD5725A6A76}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C63D7B69-D3F9-4FB1-B1A5-BCD5725A6A76}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C63D7B69-D3F9-4FB1-B1A5-BCD5725A6A76}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C63D7B69-D3F9-4FB1-B1A5-BCD5725A6A76}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

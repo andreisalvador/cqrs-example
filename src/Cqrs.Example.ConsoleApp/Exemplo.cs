@@ -19,6 +19,7 @@ namespace Cqrs.Example.ConsoleApp
 
         public void ExibirMenu()
         {
+            Console.Clear();
             Console.WriteLine("1 - Adicionar Usuario");
             Console.WriteLine("2 - Buscar usuário por nome e idade");
             Console.WriteLine("3 - Remover usuário");
@@ -94,7 +95,7 @@ namespace Cqrs.Example.ConsoleApp
 
         private void AdicionarUsuarioExemplo()
         {
-            Task.Run(() => _bus.EnviarComando(new AdicionarUsuarioCommand("Andrei", 25, Core.Enums.Sexo.Masculino)));
+            Task.Run(() => _bus.EnviarComando(new AdicionarUsuarioCommand("Andrei", 25, Core.Enums.Sexo.Masculino))).Wait();
         }
     }
 }
