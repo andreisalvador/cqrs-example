@@ -1,14 +1,9 @@
-﻿using MediatR;
-using System;
+﻿using FluentValidation;
 
 namespace Cqrs.Example.Core.Messaging
 {
-    public abstract class Query<TQueryResult> : IRequest<TQueryResult>
+    public abstract class Query<TQuery, TQueryResult> : Message<TQuery, TQueryResult>
     {
-        public DateTime Timestamp { get; private set; }
-        public Query()
-        {
-            Timestamp = DateTime.Now;
-        }
+        protected Query(AbstractValidator<TQuery> queryValidator) : base(queryValidator) { }
     }
 }

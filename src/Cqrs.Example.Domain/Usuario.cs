@@ -1,6 +1,5 @@
-﻿using Cqrs.Example.Core.Enums;
-using NetDevPack.Domain;
-using System;
+﻿using Cqrs.Example.Core;
+using Cqrs.Example.Core.Enums;
 
 namespace Cqrs.Example.Domain
 {

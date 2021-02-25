@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace Cqrs.Example.Application.Handlers
 {
-    public class UsuarioQueryHandler : IRequestHandler<ObterUsuariosAtivoPorNomeIdade, IEnumerable<UsuarioDto>>
+    public class UsuarioQueryHandler : IRequestHandler<ObterUsuariosAtivosPorNomeIdadeQuery, IEnumerable<UsuarioDto>>
     {
         private readonly IRepository<Usuario> _usuarioRepository;
         private readonly ILogger<UsuarioQueryHandler> _logger;
@@ -22,7 +22,7 @@ namespace Cqrs.Example.Application.Handlers
             _logger = logger;
         }
 
-        public async Task<IEnumerable<UsuarioDto>> Handle(ObterUsuariosAtivoPorNomeIdade request, CancellationToken cancellationToken)
+        public async Task<IEnumerable<UsuarioDto>> Handle(ObterUsuariosAtivosPorNomeIdadeQuery request, CancellationToken cancellationToken)
         {
             _logger.LogInformation($"Consultando usuario com nome '{request.Nome}'.");
 

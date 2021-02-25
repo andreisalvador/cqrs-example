@@ -38,7 +38,7 @@ namespace Cqrs.Example.Infrastructure.Ioc
             services.AddSingleton<IBus, Bus>();
             services.AddTransient<IRequestHandler<AdicionarUsuarioCommand, ValidationResult>, UsuarioCommandHandler>();
             services.AddTransient<IRequestHandler<RemoverUsuarioCommand, ValidationResult>, UsuarioCommandHandler>();
-            services.AddTransient<IRequestHandler<ObterUsuariosAtivoPorNomeIdade, IEnumerable<UsuarioDto>>, UsuarioQueryHandler>();
+            services.AddTransient<IRequestHandler<ObterUsuariosAtivosPorNomeIdadeQuery, IEnumerable<UsuarioDto>>, UsuarioQueryHandler>();
         }
 
         private static void AddDbContext(IServiceCollection services)

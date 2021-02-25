@@ -1,7 +1,6 @@
 ﻿using Cqrs.Example.Core.Messaging.Interfaces;
 using FluentValidation.Results;
 using MediatR;
-using NetDevPack.Messaging;
 using System.Threading.Tasks;
 
 namespace Cqrs.Example.Core.Messaging
@@ -14,10 +13,12 @@ namespace Cqrs.Example.Core.Messaging
         {
             _mediator = mediator;
         }
-        public async Task<ValidationResult> EnviarComando<TCommand>(TCommand command) where TCommand : Command
+        public async Task<ValidationResult> EnviarComando<TCommand>(TCommand command) where TCommand : Command<TCommand>
             => await _mediator.Send(command);
 
-        public async Task<TQueryResult> ExecutarQuery<TQuery, TQueryResult>(TQuery query) where TQuery : Query<TQueryResult>
+
+
+        public async Task<TQueryResult> ExecutarQuery<TQuery, TQueryResult>(TQuery query) where TQuery : Query<TQuery, TQueryResult>
             => await _mediator.Send(query);
     }
 }
