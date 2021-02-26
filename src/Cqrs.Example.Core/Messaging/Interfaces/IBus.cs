@@ -7,5 +7,6 @@ namespace Cqrs.Example.Core.Messaging.Interfaces
     {
         Task<ValidationResult> EnviarComando<TCommand>(TCommand command) where TCommand : Command<TCommand>;
         Task<TQueryResult> ExecutarQuery<TQuery, TQueryResult>(TQuery query) where TQuery : Query<TQuery, TQueryResult>;
+        Task EnviarEvento<TEvent>(TEvent @event) where TEvent : Event;
     }
 }

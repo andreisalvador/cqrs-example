@@ -1,4 +1,5 @@
 ﻿using Cqrs.Example.Application.Commands;
+using Cqrs.Example.Application.Events;
 using Cqrs.Example.Application.Handlers;
 using Cqrs.Example.Application.Queries;
 using Cqrs.Example.Application.Queries.DTOs;
@@ -6,6 +7,7 @@ using Cqrs.Example.Core.Data;
 using Cqrs.Example.Core.Messaging;
 using Cqrs.Example.Core.Messaging.Interfaces;
 using Cqrs.Example.Domain;
+using Cqrs.Example.ExternalSystem;
 using Cqrs.Example.Infrastructure.Data;
 using Cqrs.Example.Infrastructure.Data.Repositories;
 using FluentValidation.Results;
@@ -22,7 +24,6 @@ namespace Cqrs.Example.Infrastructure.Ioc
     {
         public static void ResolveDependencies(this IServiceCollection services, Assembly applicationAssembly)
         {
-            services.AddLogging(x => x.AddConsole());
             AddDbContext(services);
             AddRepositories(services);
             AddMessaging(services, applicationAssembly);
@@ -37,6 +38,8 @@ namespace Cqrs.Example.Infrastructure.Ioc
         {
             services.AddMediatR(applicationAssembly);
             services.AddScoped<IBus, Bus>();
+            services.AddScoped<INotificationHandler<UsuarioAdicionadoEvent>, UsuarioEventHandler>();
+            services.AddScoped<INotificationHandler<UsuarioRemovidoEvent>, UsuarioEventHandler>();
             services.AddScoped<IRequestHandler<AdicionarUsuarioCommand, ValidationResult>, UsuarioCommandHandler>();
             services.AddScoped<IRequestHandler<RemoverUsuarioCommand, ValidationResult>, UsuarioCommandHandler>();
             services.AddScoped<IRequestHandler<ObterUsuariosAtivosPorNomeIdadeQuery, IEnumerable<UsuarioDto>>, UsuarioQueryHandler>();
