@@ -13,7 +13,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cqrs.Example.Domain", "..\s
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cqrs.Example.Application", "..\src\Cqrs.Example.Application\Cqrs.Example.Application.csproj", "{31F054B2-D6FA-405D-ABF4-651412B9A058}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cqrs.Example.WebApp", "..\src\Cqrs.Example.WebApp\Cqrs.Example.WebApp.csproj", "{C63D7B69-D3F9-4FB1-B1A5-BCD5725A6A76}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cqrs.Example.WebApi", "..\src\Cqrs.Example.WebApi\Cqrs.Example.WebApi.csproj", "{C0A8309E-2D16-43FD-8AA1-1BAC98D48D4C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,10 +41,10 @@ Global
 		{31F054B2-D6FA-405D-ABF4-651412B9A058}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{31F054B2-D6FA-405D-ABF4-651412B9A058}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{31F054B2-D6FA-405D-ABF4-651412B9A058}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C63D7B69-D3F9-4FB1-B1A5-BCD5725A6A76}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C63D7B69-D3F9-4FB1-B1A5-BCD5725A6A76}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C63D7B69-D3F9-4FB1-B1A5-BCD5725A6A76}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C63D7B69-D3F9-4FB1-B1A5-BCD5725A6A76}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C0A8309E-2D16-43FD-8AA1-1BAC98D48D4C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C0A8309E-2D16-43FD-8AA1-1BAC98D48D4C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C0A8309E-2D16-43FD-8AA1-1BAC98D48D4C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C0A8309E-2D16-43FD-8AA1-1BAC98D48D4C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -24,6 +24,12 @@ namespace Cqrs.Example.Application.Handlers
 
         public async Task<IEnumerable<UsuarioDto>> Handle(ObterUsuariosAtivosPorNomeIdadeQuery request, CancellationToken cancellationToken)
         {
+            if (!request.IsValid())
+            {
+                _logger.LogError("Query inválida");
+                return null;
+            }
+
             _logger.LogInformation($"Consultando usuario com nome '{request.Nome}'.");
 
             IEnumerable<Usuario> usuarios = await _usuarioRepository.GetWhere(usuario => usuario.Nome.Equals(request.Nome) && usuario.Idade == request.Idade);
