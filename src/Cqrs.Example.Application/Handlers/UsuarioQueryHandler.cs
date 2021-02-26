@@ -32,12 +32,13 @@ namespace Cqrs.Example.Application.Handlers
 
             _logger.LogInformation($"Consultando usuario com nome '{request.Nome}'.");
 
-            IEnumerable<Usuario> usuarios = await _usuarioRepository.GetWhere(usuario => usuario.Nome.Equals(request.Nome) && usuario.Idade == request.Idade);
+            IEnumerable<Usuario> usuarios = await _usuarioRepository.GetWhere(usuario => usuario.Nome.StartsWith(request.Nome) && usuario.Idade == request.Idade);
+
 
             if (!usuarios.Any())
             {
-                _logger.LogError($"Usuario de nome '{request.Nome}' não encontrado.");
-                return null;
+                _logger.LogWarning($"Usuario de nome '{request.Nome}' não encontrado.");
+                return new List<UsuarioDto>();
             }
 
             List<UsuarioDto> usuariosEncontrados = new List<UsuarioDto>();
