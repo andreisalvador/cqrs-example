@@ -21,14 +21,14 @@ namespace Cqrs.Example.WebApi.Controllers
             _bus = bus;
         }
 
-        [HttpGet("adicionar-usuario")]
+        [HttpPost("adicionar-usuario")]
         public async Task<bool> AdicionarUsuario(string nome, byte idade, Sexo sexo)
         {
             await _bus.EnviarComando(new AdicionarUsuarioCommand(nome, idade, sexo));
             return true;
         }
 
-        [HttpGet("remover-usuario")]
+        [HttpDelete("remover-usuario")]
         public async Task<bool> RemoverUsuario(Guid usuarioId)
         {
             await _bus.EnviarComando(new RemoverUsuarioCommand(usuarioId));
